@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lottory Game</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js" integrity="sha256-xLD7nhI62fcsEZK2/v8LsBcb4lG7dgULkuXoXB/j91c=" crossorigin="anonymous"></script>
+    <style>
+        *{
+            font-family: 'Courier New', Courier, monospace;
+        }
+        h1{
+            text-align: center;
+            color: #FFAB96;
+            font-size: 50px;
+            margin: 0;
+        }
+        .div1{
+            display: flex;
+            justify-content: space-between;
+            margin: 0 50px;
+            align-items: center;
+        }
+        .select-section{
+            border: 2px solid #F7AF9D;
+            height: fit-content;
+            margin: 10px 50px;
+            background-color: #FFE2DB;
+        }
+        ul{
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            padding: 0;
+            margin: 3px 0;
+        }
+        li{
+            border: 3px solid #F7AF9D;
+            border-radius: 20px;
+            min-width: 140px;
+            padding: 5px 5px;
+            margin: 5px 5px;
+            font-size: 40px;
+            font-weight: 300;
+            color: #F7AF9D;
+            text-align: center;
+            background-color: #FFF;
+        }
+        .div2{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0 50px;
+        }
+        button{
+            color: #FFF;
+            background-color: #FFAB96;
+            padding: 10px;
+            border: 3px solid #F7AF9D;
+            border-radius: 20px;
+            font-size: 20px;
+        }
+        .div3{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .div5{
+            width: fit-content;
+            margin: 10px;
+            text-align: center;
+            font-size: 20px;
+        }
+        .div4{
+            border: 1px solid #777;
+            height: 40px;
+            width: 300px;
+            margin: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        .clicked{
+            background-color: #F8A793;
+            border: 3px solid #F8A793;
+            color: #FFF;
+        }
+        .errMsg {
+            position: absolute;
+            color: red;
+        }
+    </style>
+    <script>
+        $(function () {
+            let numsArr = [];
+
+            // 重新點選
+            $('.reselect').click(function(){
+                $('li').removeClass('clicked');
+                numsArr.length = 0;
+            })
+
+            // 玩家click數字，數字反黑
+            // 將號碼放入陣列中
+            $('li').click(function(){
+                let nums = parseInt($(this).html());
+                
+                if($(this).hasClass('clicked')){
+                    $(this).removeClass('clicked');
+                    numsArr.pop();
+                }else{
+                    $(this).addClass('clicked');
+                    numsArr.push(nums);
+                } 
+            });
+                  
+            // 莊家數字
+            let ansArr = [];
+            while(ansArr.length < 6){
+                let n = (Math.floor(Math.random()*49))+1
+                if(ansArr.includes(n)){
+                    return false;
+                }else{
+                    ansArr.push(n);
+                }
+            };
+
+            // 限制選擇6個號碼
+            // 重複執行ＸＸ
+            let correctArr = [];
+            $('.result').click(function(e){
+                if(numsArr.length > 6){
+                    alert(`Please choose 6 numbers only!`);
+                }else if(numsArr.length < 6){
+                    alert(`Please choose 6 numbers!`);
+                }else{
+                    // 排版ＸＸ
+                    $('.div4').append(ansArr.sort(
+                        function(a, b) {
+                            return a - b;
+                        }
+                    ));
+                    // 找出莊家與玩家相同數字
+                    $.each(numsArr, function(i,val){
+                        if(ansArr.includes(val)){
+                            correctArr.push(val);
+                            // console.log(val);  
+                        }
+                    });
+                    // 中獎結果
+                    if(ansArr.includes(numsArr)){
+                        $('.div5').append(
+                            `Congratulation! You got ${correctArr.length} number(s): ${correctArr}`
+                        );
+                    }else{
+                        $('.div5').append(
+                            `Sorry! We could try it again.`
+                        );
+                    }
+                }
+            });
+            
+            // 玩家重新選擇
+            console.log(ansArr); 
+            console.log(numsArr); 
+        })
+
+    </script>
+</head>
+<body>
+  <h1>Lottery</h1>
+    <div class="div1">
+        <p>Your number</p>
+        <button class="reselect">reselect</button>
+    </div>
+    <div class="select-section">
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            <li>11</li>
+            <li>12</li>
+            <li>13</li>
+            <li>14</li>
+            <li>15</li>
+            <li>16</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>21</li>
+            <li>22</li>
+            <li>23</li>
+            <li>24</li>
+            <li>25</li>
+            <li>26</li>
+            <li>27</li>
+            <li>28</li>
+            <li>29</li>
+            <li>30</li>
+            <li>31</li>
+            <li>32</li>
+            <li>33</li>
+            <li>34</li>
+            <li>35</li>
+            <li>36</li>
+            <li>37</li>
+            <li>38</li>
+            <li>39</li>
+            <li>40</li>
+            <li>41</li>
+            <li>42</li>
+            <li>43</li>
+            <li>44</li>
+            <li>45</li>
+            <li>46</li>
+            <li>47</li>
+            <li>48</li>
+            <li>49</li>
+        </ul>
+    </div>
+    <div class="div2">
+        <button class="result">result</button>
+        <div class="div5"></div>
+
+        <div class="div3">
+            <h3>Reveal Number:</h3>
+            <div class="div4"></div>
+        </div>
+    </div>
+</body>
+</html>
