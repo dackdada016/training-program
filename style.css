@@ -1,0 +1,175 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*,*:before,*:after{
+    box-sizing: border-box;
+}
+
+.wrap{
+    width: 1224px;
+    margin:0 auto;
+}
+.header h1{
+    font-size: 80px;
+    text-align: left;
+    padding-top: 40px;
+    padding-bottom: 24px;
+    border-bottom: 2px solid #000000; 
+}
+h2{
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 56px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #000000;
+}
+span{
+    font-size: 24px;
+    color: #A00404;
+}
+.content .profile1{
+    padding-top: 16px;
+    padding-bottom: 24px;
+}
+.education li{
+    padding-top: 16px;
+}
+.skills{
+    width: 1200px;
+    height:496px;
+    background: #415165;
+    margin-top: 72px;
+}
+.skills h3{
+    margin: 0 auto;
+    width: 996px;
+    text-align: center;
+    padding-top: 32px;
+    font-size: 32px;
+    color: #FFFFFF;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #FFFFFF;
+}
+.skills ul{
+    width:300px;
+    height: 327px;
+    margin:0 auto;
+    padding-top: 40px;
+    margin-bottom: 12px;
+    border-left: 1px solid #96A9C4;
+}
+.skills li{
+    margin-bottom: 20px;
+    color: #FFFFFF;
+    font-size: 24px;
+    padding-left: 24px;
+    
+}
+.experience,ul,h3{
+    padding-left: 30px;
+}
+.experience ul{
+    border-left: 1px solid #96A9C4;
+}
+.experience li h4{
+    padding-top: 16px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.experience li img{
+    padding-top: 8px;
+}
+.experience li p{
+    padding-right: 680px;
+    line-height: 1.5;
+    padding-top: 8px;
+}
+.experience .hightlight{
+    padding-top: 32px;
+    font-size: 24px;
+    font-weight: bold;
+}
+.footer{
+    margin: 0 auto;
+    width: 1224px;
+    background: #415165;
+    margin-top: 72px;
+}
+.footer h3{
+    margin: 0 auto;
+    width:996px;
+    padding-top: 24px;
+    text-align: center;
+    font-size: 32px;
+    color:#FFFFFF;
+    border-bottom: 1px solid #FFFFFF;
+    padding-bottom: 16px;
+}
+.footer ul,a{
+    text-align: center;
+    padding-top: 10px;
+    color:#FFFFFF;
+    font-size: 24px;
+    text-decoration: none;
+}
+.footer ul li{
+    padding-bottom: 16px;
+}
+.footer .icon {
+    text-align: center;
+    padding-bottom: 48px;
+    
+}
+.footer .icon a{
+    padding-left: 24px;
+   
+}
+    
+a:hover{
+    opacity: 0.6;;
+}

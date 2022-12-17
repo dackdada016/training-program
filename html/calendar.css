@@ -1,0 +1,46 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    list-style: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#skin{
+    /* border: 1px solid red; */
+    margin: 50px;
+}
+/* .calendar{
+    border: solid 2px deepskyblue;
+} */
+h2{
+    color: darkcyan;
+}
+.calendar{
+    /* border: solid 2px deepskyblue; */
+    width: 574px;       /* (80+2)*7 */
+
+}
+.week li,.date li{
+    border: solid 1px #ccc;
+    width: 80px;
+    height: 80px;
+    float: left;
+    text-align: center;
+}
+.week li{
+    line-height: 80px;
+    font-weight: bold;
+    background-color: #E7A977;
+}
+/* selector:pseudo-calsses 偽選擇器 */
+.week li:nth-child(7n),.week li:nth-child(7n+1){
+    color: red;
+}
+.date li:nth-child(7n),.date li:nth-child(7n+1){
+    color: red;
+}
+.date li{
+    background-color: #FFFAB0;
+}
+.date li:empty{
+    background-color: transparent;
+}

@@ -1,0 +1,12 @@
+div{
+    font: bold 100px Tahoma
+}
+.theClass{
+    text-decoration: underline maroon dotted;
+}
+.myClass{
+    border:1px dashed rgb(0, 47, 255);
+}
+#myId{
+    background: rgb(255, 94, 0);
+}

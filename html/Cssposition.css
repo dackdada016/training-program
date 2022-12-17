@@ -1,0 +1,16 @@
+.first{
+    font: bold 100px Tahoma;
+    color: steelblue;
+    position: absolute ;
+    left: 200px;
+    top: 200px;
+    z-index:10;
+}
+.second{
+    font: bold 100px Tahoma;
+    color: #aaa;
+    position: absolute;
+    left: 203px;
+    top: 205px;
+    z-index: 1;
+}

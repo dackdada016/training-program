@@ -1,0 +1,117 @@
+*{
+    /* border: 1px solid tomato; */
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: bisque; */
+}
+body{
+    margin: 0;
+}
+p{
+    font-size: 12px;
+}
+header, .check-all, .heard-text{
+    background-color: #666;
+    color: #fff;
+}
+.page-container{
+    max-width: 800px;
+    margin: 5px auto;
+    border: 1px solid #000;
+}
+.check-box{
+    background-color: #666;
+    display: flex;
+    margin-bottom: 5px;
+}
+.check-all{
+    width: 20px;
+    font-size: 20px;
+}
+.container{
+    padding: 0 5%;
+    margin: 0 auto;
+    /* border: 1px solid rgb(71, 166, 255); */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.left-bar{
+    width: 80%;
+    /* border: 1px solid rgb(88, 88, 88); */
+    margin-right: 2%;
+}
+.porducts-col{
+    margin-bottom: 5px;
+}
+.cart-title{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid rgb(88, 88, 88);
+    color: rgb(255, 255, 255);
+    background-color: #666;
+    padding-right: 10px;
+}
+.title-text{
+    display: flex;
+    padding-right: 10px;
+}
+.cart-detetail{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 5px;
+}
+.products-img{
+    display: flex;
+    align-items: center;
+}
+.porducts-name{
+    width: 50%;
+}
+.quantity{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-right: 5px;
+}
+.quantity>span{
+    margin: 5px;
+}
+.right-bar{
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 5px;
+    border: 1px solid rgb(88, 88, 88);
+}
+
+.order-title h4{
+    margin: 0;
+    color: #fff;
+    background-color: rgb(155, 155, 155);
+}
+.order-detetail h5{
+    color: #fff;
+    background-color: rgb(155, 155, 155);;
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+.check-order-btn{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(43, 76, 226);
+    border-radius: 3px;
+    padding: 3px 0;
+    cursor: pointer
+}
+.check-order-btn>span{
+    background-color: rgb(43, 76, 226);
+    color: aliceblue;
+    font-weight: bold;
+}
+
+.order-title, .detetail, .shipping-cost, .divider, .price-totle  {
+    border: 1px solid rgb(88, 88, 88);
+    margin-bottom: 3px;
+}

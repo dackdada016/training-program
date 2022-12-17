@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>加入會員</title>
+    <style>
+        div{
+            margin: 5px;
+            }
+        label{
+            text-align: left;
+            color: brown;
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- form 表單物件 1.畫面出現的 2.原始檔 3.收到的資料 -->
+    <fieldset  style="width:auto;" align="center">
+        <legend>
+        <h2>加入會員</h2>
+        </legend>
+    <form >
+           <table width="50%" align="center">
+            <tr>
+                
+                <td>
+                    <fieldset>
+                        <legend>帳號</legend>
+                        <input type="text" name="username">
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>密碼: </legend>
+                        <input type="password" name="pwd">
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>性別: </legend>
+                        <input type="radio" name="gender" value="male" >男
+                        <input type="radio" name="gender" value="female">女
+                        <input type="radio" name="gender" value="others"checked>保密<br>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>興趣: </legend>
+                        <input type="checkbox" name="interest" id="" value="read">閱讀
+                        <input type="checkbox" name="interest" id="" value="sleep">睡覺
+                        <input type="checkbox" name="interest" id="" value="game" checked>電動<br>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>血型: </legend>
+                            <select name="blood" id="">
+                            <option value="A">A</option>
+                            <option value="B">B</option>
+                            <option value="O" selected>O</option>
+                            <option value="AB">AB</option>
+                            </select>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>留言:  </legend>
+                            <textarea name="talk" id="" cols="20" rows="5"></textarea>
+                    </fieldset>
+                </td>
+            </tr>
+        </table>
+              
+        <hr>
+        <input type="submit" value="傳送">
+        <button><img src="../images/foot.gif" alt="foot"></button>
+    </form>
+    </fieldset>
+    <div>
+        <label>username:</label>
+        <input type="text" name="username">
+    </div>
+    <div>
+        <label>password:</label>
+        <input type="password" name="psd" id="psd">
+    </div>
+</body>
+</html>
