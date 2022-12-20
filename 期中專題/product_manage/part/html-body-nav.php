@@ -2,7 +2,7 @@
         <div class="d-flex align-items-center ps-1 pe-1 m-2" >
           商品列表
         </div>
-        <div class="content-title border">
+        <div class="content-title border-top border-bottom">
           <div class="d-flex align-items-center ps-1 pe-1 m-2">
             <div class="content-title me-3">商品項目</div> 
             <i class="btn border fa-regular fa-square-plus p-1">新增</i></div>
