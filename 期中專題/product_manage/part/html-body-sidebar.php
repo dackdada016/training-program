@@ -1,4 +1,4 @@
-<container class="d-flex border">
+<container class="d-flex border ms-auto me-auto">
     <div class="sidebar border">
       <ul class="nav flex-column">
         <li class="nav-item">
