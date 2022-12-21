@@ -105,4 +105,3 @@ $title = "新增商品資料";
     };
 </script>
 <?php include './part/html-foot.php' ?>
- // TODO 調整表單輸入類型的方式
