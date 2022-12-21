@@ -17,8 +17,7 @@ $title = "新增商品資料";
                     <form name="formProudct" onsubmit="checkForm(event)">
                         <div class="mb-3 mt-3">
                             <label for="product-name" class="form-label text-capitalize">
-                                product name <br>
-                                商品名稱
+                                product name 商品名稱
                             </label>
                             <input type="text" class="form-control" id="productName" name="productName" required>
                             <div class="form-text"></div>
