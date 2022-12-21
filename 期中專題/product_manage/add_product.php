@@ -30,16 +30,17 @@ $title = "新增商品資料";
                             </label>
                             <select name="products">
                                 <option value="none" selected disabled hidden>請選擇商品分類</option>
-                                <option>飼料乾糧</option>
-                                <option>罐頭濕食</option>
-                                <option>外出繩/服</option>
-                                <option>耐磨玩具</option>
+                                <option value="1" >飼料</option>
+                                <option value="2" >罐頭</option>
+                                <option value="3" >外出繩</option>
+                                <option value="4" >耐磨玩具</option>
                             </select>
                         </div>
                         <div class="mb-3">
                             <div class="input-group">
-                                <span class="input-group-text">products-decripttion</span>
-                                <textarea class="form-control" name="address" id="products_decripttion" cols="30" rows="3" aria-label="products-decripttion"></textarea>
+                                <span class="input-group-text">產品介紹</span>
+                                <textarea class="form-control" name="productsDecripttion" id="productsDecripttion" cols="30" rows="3" aria-label="productsDecripttion" required >
+                                </textarea>
                                 <div class="form-text"></div>
                             </div>
                         </div>
