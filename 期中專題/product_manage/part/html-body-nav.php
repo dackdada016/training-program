@@ -1,4 +1,4 @@
-<nav class="title d-flex flex-column flex-grow-1 border">
+<nav class="title d-flex flex-column flex-grow-1 ms-2 me-2 border">
         <div class="d-flex align-items-center ps-1 pe-1 m-2" >
           商品列表
         </div>
