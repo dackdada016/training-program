@@ -1,10 +1,10 @@
 <?php
-require './product_manage/part/connect_db.php';
+require './part/connect_db.php';
 
 ?>
-<?php include './product_manage/part/html-header.php' ?>
-<?php include './product_manage/part/html-body-header.php' ?>
-<?php include './product_manage/part/html-body-sidebar.php' ?>
-<?php include './product_manage/part/html-body-nav.php' ?>
-<?php include './product_manage/part/html-script.php' ?>
-<?php include './product_manage/part/html-foot.php' ?>
+<?php include './part/html-header.php' ?>
+<?php include './part/html-body-header.php' ?>
+<?php include './part/html-body-sidebar.php' ?>
+<?php include './part/html-body-nav.php' ?>
+<?php include './part/html-script.php' ?>
+<?php include './part/html-foot.php' ?>
