@@ -1,5 +1,5 @@
 <?php
-require './product_manage/part/connect.php';
+require './product_manage/part/connect_db.php';
 
 ?>
 <?php include './product_manage/part/html-header.php' ?>
