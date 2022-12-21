@@ -24,9 +24,8 @@ $title = "新增商品資料";
                         </div>
                         <div class="mb-3 mt-2 ">
                             <label for="productType" class="form-label text-capitalize ">
-                                product type <br>
-                                商品類型
-                            </label>
+                                product type 商品類型
+                            </label><br>
                             <select name="products">
                                 <option value="none" selected disabled hidden>請選擇商品分類</option>
                                 <option value="1" >飼料</option>
@@ -38,8 +37,7 @@ $title = "新增商品資料";
                         <div class="mb-3">
                             <div class="input-group">
                                 <span class="input-group-text">產品介紹</span>
-                                <textarea class="form-control" name="productsDecripttion" id="productsDecripttion" cols="30" rows="3" aria-label="productsDecripttion" required >
-                                </textarea>
+                                <textarea class="form-control" name="productsDecripttion" id="productsDecripttion" cols="30" rows="3" aria-label="productsDecripttion" required ></textarea>
                                 <div class="form-text"></div>
                             </div>
                         </div>
@@ -47,7 +45,9 @@ $title = "新增商品資料";
                             <input type="file" class="form-control" id="inputGroupFile02">
                             <label class="input-group-text" for="inputGroupFile02">Upload</label>
                         </div>
-                        <input class="btn border-primary text-white bg-primary" type="submit" value="submit">
+                        <div class="d-flex justify-content-center btn border-primary text-white bg-primary">
+                            <input class="btn text-white" type="submit" value="submit">
+                        </div>
                     </form>
                 </div>
             </div>
