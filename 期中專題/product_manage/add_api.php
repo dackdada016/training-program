@@ -30,7 +30,7 @@ $my_file = $_FILES['my_file']['name'] ?? '';
 
 
 
-if(mb_strlen($productName ) < 2){
+if(mb_strlen($productName) < 2){
   $output['errors']['productName'] = '請填寫商品名稱';
   $isPass = false;
 }
@@ -64,6 +64,16 @@ if($isPass) {
   $id = $pdo -> lastInsertId();
   $output['lastId'] = $id;
   $output['success'] = !! $stmt->rowCount();
+
+}
+$sql_img = " INSERT INTO `product_imgs`(`products_id, `img_name`) VALUES (?,?) ";
+
+$stmt_img = $pdo->prepare($sql_img);
+if($isPass){
+  $stmt_img->execute([
+    $id,
+    $my_file,
+  ]);
 }
 
 
