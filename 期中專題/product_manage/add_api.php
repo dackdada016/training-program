@@ -4,13 +4,14 @@ header('Content-Type: application/json');
 
 $output = [
   'success' => false,
+  'lastId' => 0,
   'postData' => $_POST,
   'code' => 0,
   'errors' => []
 ];
 
-if(empty($_POST['name'])) {
-  $output['errors']['product-name'] = '沒有商品名稱';
+if(empty($_POST['productName'])) {
+  $output['errors']['productName'] = '沒有商品名稱';
   echo json_encode($output, JSON_UNESCAPED_UNICODE);
   exit;
 }
@@ -19,16 +20,18 @@ if(empty($_POST['name'])) {
 
 $isPass = true; // 是否通過檢查
 
-$name = $_POST['name'] ?? '';
+$productName = $_POST['productName'] ?? '';
 // $email = $_POST['email'] ?? '';
-$mobile = $_POST['mobile'] ?? '';
-$birthday = $_POST['birthday'] ?? '';
-$address = $_POST['address'] ?? '';
+$productsType = $_POST['productsType'] ?? '';
+$productsDecripttion = $_POST['productsDecripttion'] ?? '';
+$productPrice = $_POST['productPrice'] ?? '';
+$productUnit = $_POST['productUnit'] ?? '';
+$my_file = $_FILES['my_file']['name'] ?? '';
 
 
 
-if(mb_strlen($name ) < 2){
-  $output['errors']['product-name'] = '請填寫商品名稱';
+if(mb_strlen($productName ) < 2){
+  $output['errors']['productName'] = '請填寫商品名稱';
   $isPass = false;
 }
 
@@ -38,35 +41,28 @@ if(mb_strlen($name ) < 2){
 // }
 
 
-$sql = "INSERT INTO `address_book`(
-  `name`, `email`, `mobile`, 
-  `birthday`, `address`, `created_at`
-  ) VALUES (
-    ?,?,?,
-    ?,?, NOW()
-  )";
+// $sql = " INSERT INTO `products`(`products_id`, `products_name`, `type_id`, `products_decripttion`, `products_price`, `products_unit`, `products_img_name`) VALUES (?,?,?,?,?,?,?) " and " INSERT INTO `product_imgs`(`products_id`, `img_name`) VALUES (?,?)";
+$sql = " INSERT INTO `products`(`products_name`, `type_id`, `products_decripttion`, `products_price`, `products_unit`, `products_img_name`) VALUES (?,?,?,?,?,?)";
+
+  // and " INSERT INTO `product_imgs`(`products_id`, `img_name`) VALUES (?,?)";
+
+
 
 $stmt = $pdo->prepare($sql);
 
-
-if(!empty($_POST['birthday'])){
-  $t = strtotime($_POST['birthday']);
-  if($t!==false){
-    $birthday = date('Y-m-d', $t);
-  }
-}
-if(empty($birthday)){
-  $birthday = null;
-}
 if($isPass) {
-  $stmt->execute([
-    $name,
-    $email,
-    $mobile,
-    $birthday,
-    $address,
+ $stmt->execute([
+    $productName,
+    $productsType,
+    $productsDecripttion,
+    $productPrice,
+    $productUnit,
+    $my_file,
   ]);
-  
+
+  // lastInsertId -> 得到前面新增的資料(最新一筆)的id
+  $id = $pdo -> lastInsertId();
+  $output['lastId'] = $id;
   $output['success'] = !! $stmt->rowCount();
 }
 
