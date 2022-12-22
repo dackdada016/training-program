@@ -14,7 +14,8 @@ $title = "新增商品資料";
             <div class=" border border-warning rounded rounded-3">
                 <div class="card-body ms-auto me-auto">
                     <h5 class="m-0 border-bottom pb-2 border-warning">新增商品資料</h5>
-                    <form name="formProudct" onsubmit="checkForm(event)" enctype="multipart/form-data">
+                    <form name="formProudct" method="POST"
+                    onsubmit="checkForm(event)" enctype="multipart/form-data">
                         <div class="mb-3 mt-3">
                             <label for="productName" class="form-label text-capitalize">
                                 product name 商品名稱
@@ -26,7 +27,7 @@ $title = "新增商品資料";
                             <label for="productType" class="form-label text-capitalize ">
                                 product type 商品類型
                             </label><br>
-                            <select name="products">
+                            <select name="productsType">
                                 <option value="none" selected disabled hidden>請選擇商品分類</option>
                                 <option value="1" >飼料</option>
                                 <option value="2" >罐頭</option>
@@ -37,7 +38,7 @@ $title = "新增商品資料";
                         <div class="mb-3">
                             <div class="input-group">
                                 <span class="input-group-text">產品介紹</span>
-                                <textarea class="form-control rounded-end" name="productsDecripttion" id="productsDecripttion" cols="30" rows="3" aria-label="productsDecripttion" required ></textarea>
+                                <textarea placeholder="最少10個字的介紹" class="form-control rounded-end" name="productsDecripttion" id="productsDecripttion" cols="30" rows="3" aria-label="productsDecripttion" required ></textarea>
                             </div>
                         </div>
                         <div class="mb-3 mt-3">
@@ -117,12 +118,18 @@ $title = "新增商品資料";
         field.style.border = '2px solid red';
         field.nextElementSibling.innerHTML = '請輸入正確的商品名稱';
         }
+        let pd = document.formProudct.productsDecripttion;
+        if( pd.value.length < 10 ){
+            isPass = false;
+            pd.style.border = '2px solid red';
+            pd.nextElementSibling.innerHTML = '請輸入正確的商品名稱';
+        }
 
 
         if (!isPass) {
         return; // 沒有通過檢查就結束, 不發 AJAX request
         }
-        const fd = new FormData(document.form1);
+        const fd = new FormData(document.formProudct);
         /*
             fetch('add-api.php', {
             method: 'POST',
@@ -133,7 +140,7 @@ $title = "新增商品資料";
             console.log(obj);
             })
         */
-        fetch('add-api.php', {
+        fetch('add_api.php', {
             method: 'POST',
             body: fd
         })
