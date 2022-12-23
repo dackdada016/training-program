@@ -90,6 +90,7 @@ $stmt = $pdo->prepare($sql);
 // TODO:line 97 error
 if($isPass) {
  $stmt->execute([
+    $products_id,
     $productName,
     $productsType,
     $productsDecripttion,

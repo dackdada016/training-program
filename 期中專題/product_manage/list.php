@@ -45,7 +45,7 @@ $rows = $pdo->query($sql)->fetchAll();
                     <td><?= $r['products_price'] ?></td>
                     <td><?= $r['products_unit'] ?></td>
                     <td class="align-items-center">
-                        <a href="<?= "updata.php?p=" . $r['products_id'] ?>" ><i class="fa-solid fa-pen-to-square btn border">編輯</i></a>
+                        <a href="<?= "updata.php?products_id=" . $r['products_id'] ?>" ><i class="fa-solid fa-pen-to-square btn border">編輯</i></a>
                         <i class="fa-solid fa-trash-can btn border">刪除</i>
                     </td>
                 </tr>

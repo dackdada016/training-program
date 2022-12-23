@@ -3,8 +3,9 @@ require './part/connect_db.php';
 $title = "修改資料";
 $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/product_manage/%e4%b8%8a%e5%82%b3%e7%85%a7%e7%89%87/';
 
-$p_id = $_GET['p'];
-$sql = "SELECT * FROM `products` WHERE `products_id` = $p_id";
+// $p_id = $_GET['p'];
+$products_id = isset($_GET['products_id']) ? intval($_GET['products_id']) : 0;
+$sql = "SELECT * FROM `products` WHERE `products_id` = $products_id";
 $r = $pdo->query($sql)->fetch();
 
 
@@ -151,7 +152,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
 
 
         if (!isPass) {
-        return; // 沒有通過檢查就結束, 不發 AJAX request
+        return;  alert('Error') // 沒有通過檢查就結束, 不發 AJAX request
         }
         const fd = new FormData(document.formProudct);
         /*
@@ -182,7 +183,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
                     el.nextElementSibling.innerHTML = obj.errors[k];
                     }
                 }
-                alert('資料沒有修改');
+                alert(obj.success.Error);
             }
         })
     };
