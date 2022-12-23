@@ -166,26 +166,25 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
             })
         */
         fetch('edit_api.php', {
-            method: 'POST',
-            body: fd
+        method: 'POST',
+        body: fd
         })
         .then(r => r.json())
         .then(obj => {
             console.log(obj);
-                if (obj.success) {
-                alert('修改成功');
-                location.href = "edit_api.php"
-                } else {
-                for (let k in obj.errors) {
-                    const el = document.querySelector('#' + k);
-                    if (el) {
-                    el.style.border = '2px solid red';
-                    el.nextElementSibling.innerHTML = obj.errors[k];
-                    }
+            if (obj.success) {
+            alert('修改成功');
+            } else {
+            for (let k in obj.errors) {
+                const el = document.querySelector('#' + k);
+                if (el) {
+                el.style.border = '2px solid red';
+                el.nextElementSibling.innerHTML = obj.errors[k];
                 }
-                alert(obj.success.Error);
+            }
+            alert('資料沒有修改');
             }
         })
-    };
+  };
     </script>
 <?php include './part/html-foot.php' ?>
