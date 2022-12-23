@@ -167,6 +167,7 @@ $title = "新增商品資料";
             console.log(obj);
             if (obj.success) {
             alert('新增成功');
+            location.href = "list.php"
             } else {
             for (let k in obj.errors) {
                 const el = document.querySelector('#' + k);
