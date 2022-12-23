@@ -57,7 +57,7 @@ $title = "新增商品資料";
                             <div class="form-text"></div>
                         </div>
                         <div class="input-group mb-3 rounded">
-                            <input type="file"  accept="image/*" name="my_file" class="form-control" multiple>
+                            <input type="file"  accept="image/jpeg,image/png" name="my_file" class="form-control" multiple>
                         </div>
                         <div class="file mb-3">
                             <img src="" id="myimg" width="200">
@@ -80,6 +80,7 @@ $title = "新增商品資料";
 
       // Promise function, 用來取得圖檔的 DataURL
       function getDataURLByFile(file) {
+        
         if (!(file instanceof File)) {
           throw new Error("必須是 File 類型");
         }
@@ -96,10 +97,27 @@ $title = "新增商品資料";
         });
       }
 
-      f.onchange = async (e) => {
-        console.log(f.files); // FileList, File
-        myimg.src = await getDataURLByFile(f.files[0]);
-      };
+      //預覽圖片
+      f.addEventListener('change',function(){
+        getDataURLByFile(this.files[0]).then(data => myimg.src = data)
+       
+      })
+     // f.onchange = async (e)=>{
+        // const fd = new FormData(document.formProudct);
+        // const r = await fetch('upload-single-img.php', {
+        //   method: 'POST',
+        //   body: fd
+        // });
+        // const data = await r.json();
+        // console.log({data});
+        // if(data.success){
+        //   // 成功上傳
+        //   myimg.src = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/product_manage/%e4%b8%8a%e5%82%b3%e7%85%a7%e7%89%87/' + data.filename;
+        //   document.formProudct.my_file.value = data.filename;
+        // } else {
+        //   alert(data.error || '沒有上傳的檔案');
+        // }
+     // };
     
     const checkForm = (e) => {
         e.preventDefault(); // 不要讓原來的表單送出
