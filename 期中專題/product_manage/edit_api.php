@@ -90,13 +90,13 @@ $stmt = $pdo->prepare($sql);
 // TODO:line 97 error
 if($isPass) {
  $stmt->execute([
-    $products_id,
     $productName,
     $productsType,
     $productsDecripttion,
     $productPrice,
     $productUnit,
-    $fname
+    $fname,
+    $products_id
   ]);
 
   // lastInsertId -> 得到前面新增的資料(最新一筆)的id
