@@ -5,6 +5,10 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
 
 // $p_id = $_GET['p'];
 $products_id = isset($_GET['products_id']) ? intval($_GET['products_id']) : 0;
+if(empty($products_id)){
+    header('Location: list.php');
+    exit;
+  }
 $sql = "SELECT * FROM `products` WHERE `products_id` = $products_id";
 $r = $pdo->query($sql)->fetch();
 
@@ -174,6 +178,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
             console.log(obj);
             if (obj.success) {
             alert('修改成功');
+            location.href = "list.php"
             } else {
             for (let k in obj.errors) {
                 const el = document.querySelector('#' + k);
