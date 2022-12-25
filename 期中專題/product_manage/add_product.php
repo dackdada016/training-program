@@ -29,10 +29,10 @@ $title = "新增商品資料";
                             </label><br>
                             <select name="productsType">
                                 <option value="none" selected disabled hidden>請選擇商品分類</option>
-                                <option value="1" >飼料</option>
-                                <option value="2" >罐頭</option>
-                                <option value="3" >外出繩</option>
-                                <option value="4" >耐磨玩具</option>
+                                <option value="飼料" >飼料</option>
+                                <option value="罐頭" >罐頭</option>
+                                <option value="外出繩" >外出繩</option>
+                                <option value="耐磨玩具" >耐磨玩具</option>
                             </select>
                         </div>
                         <div class="mb-3">

@@ -77,7 +77,7 @@ if(mb_strlen($productName) < 2){
 }
 // TODO:寫進資料庫
 
-$sql = " INSERT INTO `products`(`products_name`, `type_id`, `products_decripttion`, `products_price`, `products_unit`, `products_img_name`) VALUES (?,?,?,?,?,?)";
+$sql = " INSERT INTO `products`(`products_name`, `type_name`, `products_decripttion`, `products_price`, `products_unit`, `products_img_name`) VALUES (?,?,?,?,?,?)";
   // and " INSERT INTO `product_imgs`(`products_id`, `img_name`) VALUES (?,?)";
 $stmt = $pdo->prepare($sql);
 

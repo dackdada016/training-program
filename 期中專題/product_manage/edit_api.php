@@ -79,7 +79,7 @@ if(mb_strlen($productName) < 2){
 
 $sql = " UPDATE `products` SET 
 `products_name`=?,
-`type_id`=?,
+`type_name`=?,
 `products_decripttion`=?,
 `products_price`=?,
 `products_unit`=?,

@@ -39,11 +39,11 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
                             <label for="productType" class="form-label text-capitalize ">
                                 product type 商品類型
                             </label><br>
-                            <select name="productsType" value="<?= $r['type_id'] ?>">
-                                <option value="1" >飼料</option>
-                                <option value="2" >罐頭</option>
-                                <option value="3" >外出繩</option>
-                                <option value="4" >耐磨玩具</option>
+                            <select name="productsType" value="<?= $r['type_name'] ?>">
+                                <option value="飼料" >飼料</option>
+                                <option value="罐頭" >罐頭</option>
+                                <option value="外出繩" >外出繩</option>
+                                <option value="耐磨玩具" >耐磨玩具</option>
                             </select>
                         </div>
                         <div class="mb-3">
