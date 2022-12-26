@@ -23,7 +23,7 @@ if (!empty($totalRows)) {
     exit;
   }
   $sql =sprintf(
-    "SELECT * FROM `products` ORDER BY sid DESC LIMIT %s, %s",
+    "SELECT * FROM `products` ORDER BY products_id DESC LIMIT %s, %s",
     ($page - 1) * $perPage,
       $perPage
   );
@@ -44,13 +44,14 @@ if (!empty($totalRows)) {
         <div class="content-title border-top border-bottom">
           <div class="d-flex align-items-center ps-1 pe-1 m-2">
             <div class="content-title me-3">商品項目</div> 
-            <a href="add_product.php"><i class="btn border fa-regular fa-square-plus p-1">新增</i></a></div>
+            <a href="add_product.php"><i class="btn border fa-regular fa-square-plus p-1">新增</i></a>
           </div>
           
         </div>
         <table class="table table-hover align-middle">
             <thead>
-                <tr>
+                <tr class="text-center">
+                    <th scope="col">詳情</th>
                     <th scope="col">圖片</th>
                     <th scope="col">商品ID</th>
                     <th scope="col-1">商品名稱</th>
@@ -64,6 +65,11 @@ if (!empty($totalRows)) {
             <tbody>
                 <?php foreach ($rows as $r) :?>
                 <tr>
+                    <td>
+                      <a class="rounded-pill border btn btn-light" href="<?= "details.php?products_id=" . $r['products_id']?>" >
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+                    </td>
                     <td><img src="<?= $path . $r['products_img_name'] ?>" width="90" height="90"></td>
                     <td><?= $r['products_id'] ?></td>
                     <td><?= $r['products_name'] ?></td>
@@ -71,15 +77,13 @@ if (!empty($totalRows)) {
                     <td><?= $r['products_decripttion'] ?></td>
                     <td><?= $r['products_price'] ?></td>
                     <td><?= $r['products_unit'] ?></td>
-                    <td class="align-items-center">
-                        <a href="<?= "updata.php?products_id=" . $r['products_id']?>" >
-                            <i class="fa-solid fa-pen-to-square btn border">編輯</i>
+                    <td class="align-items-center text-center" colspan="2">
+                        <a class="btn btn-outline-primary mb-1" href="<?= "updata.php?products_id=" . $r['products_id']?>" >
+                            <i class="fa-solid fa-pen-to-square"></i>編輯
                         </a>
-                    </td>
-                    <td class="align-items-center">
-                        <a href="javascript: delete_it(<?= $r['products_id']?>)">
-                            <i class="fa-solid fa-trash-can btn border">刪除</i>
-                        </a>    
+                        <a class="btn btn-outline-danger" href="javascript: delete_it(<?= $r['products_id']?>)">
+                            <i class="fa-solid fa-trash-can"></i>刪除
+                        </a> 
                     </td>
                 </tr>
             </tbody>
