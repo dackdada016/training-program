@@ -60,10 +60,10 @@ $title = "新增商品資料";
                             <input type="file"  accept="image/jpeg,image/png" name="my_file" class="form-control" multiple>
                         </div>
                         <div class="file mb-3">
-                            <img src="" id="myimg" width="200">
+                            <img src="" id="myimg" width="200" class="ms-auto me-auto">
                         </div>
-                        <div class="d-flex justify-content-center btn border-primary text-white bg-primary">
-                            <input class="btn text-white" type="submit" value="submit">
+                        <div class="d-flex justify-content-center d-grid gap-2 btn border-primary text-white bg-primary">
+                            <input class="btn text-white" type="submit" value="確定新增">
                         </div>
                     </form>
                 </div>
