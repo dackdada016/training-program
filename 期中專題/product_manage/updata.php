@@ -25,7 +25,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
             <i class="fa-solid fa-angles-left">回上一頁</i>
         </a>
     </div>
-    <div class="row ms-auto me-auto">
+    <div class="row ms-auto me-auto mb-2">
         <div class="col-lg-6 mt-3 ms-auto me-auto">
             <div class=" border border-warning rounded rounded-3">
                 <div class="card-body ms-auto me-auto">
@@ -79,7 +79,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
                             <img src="<?= $path . $r['products_img_name']?>" id="myimg" width="200">
                         </div>
                         <div class="d-flex justify-content-center btn border-primary text-white bg-primary">
-                            <input class="btn text-white" type="submit" value="submit">
+                            <input class="btn text-white" type="submit" value="確定修改">
                         </div>
                     </form>
                 </div>

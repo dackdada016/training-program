@@ -9,6 +9,11 @@ $title = "新增商品資料";
 <?php include './part/html-header.php' ?>
 <?php include './part/html-body-header.php' ?>
 <div class="container add-prouct ms-auto me-auto mt-3">
+    <div class="btn">
+        <a href="list.php" class="text-danger">
+            <i class="fa-solid fa-angles-left">回上一頁</i>
+        </a>
+    </div>
     <div class="row ms-auto me-auto">
         <div class="col-lg-6 mt-3 ms-auto me-auto">
             <div class=" border border-warning rounded rounded-3">
@@ -59,7 +64,7 @@ $title = "新增商品資料";
                         <div class="input-group mb-3 rounded">
                             <input type="file"  accept="image/jpeg,image/png" name="my_file" class="form-control" multiple>
                         </div>
-                        <div class="file mb-3">
+                        <div class="file mb-3 d-flex justify-content-center">
                             <img src="" id="myimg" width="200" class="ms-auto me-auto">
                         </div>
                         <div class="d-flex justify-content-center d-grid gap-2 btn border-primary text-white bg-primary">

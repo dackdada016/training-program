@@ -16,13 +16,13 @@ $r = $pdo->query($sql)->fetch();
 <?php include './part/html-header.php' ?>
 <?php include './part/html-body-header.php' ?>
 <?php include './part/html-body-sidebar.php' ?>
-<div class="container mt-3 ">
+<div class="container mt-2 ">
             <div class="btn">
-                <a href="list.php" class="text-danger">
+                <a href="list.php" class="btn text-danger">
                 <i class="fa-solid fa-angles-left">回上一頁</i>
                 </a>
             </div>
-            <div class="card ms-auto me-auto" style="width: 18rem;">
+            <div class="card ms-auto me-auto mb-3" style="width: 18rem;">
                 <img src="<?= $path . $r['products_img_name']?>" id="myimg" " class="card-img-top">
                 <div class="card-body">
                     <h5 class="card-title border-bottom border-warning">
