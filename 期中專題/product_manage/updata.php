@@ -20,6 +20,11 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
 <?php include './part/html-body-header.php' ?>
 <?php include './part/html-body-sidebar.php' ?>
 <div class="container add-prouct ms-auto me-auto mt-3">
+    <div class="btn">
+        <a href="list.php" class="text-danger">
+            <i class="fa-solid fa-angles-left">回上一頁</i>
+        </a>
+    </div>
     <div class="row ms-auto me-auto">
         <div class="col-lg-6 mt-3 ms-auto me-auto">
             <div class=" border border-warning rounded rounded-3">
@@ -70,7 +75,7 @@ $path = 'http://localhost/training-program/%e6%9c%9f%e4%b8%ad%e5%b0%88%e9%a1%8c/
                         <div class="input-group mb-3 rounded">
                             <input type="file"  accept="image/jpeg,image/png" name="my_file" class="form-control" multiple>
                         </div>
-                        <div class="file mb-3">
+                        <div class="file mb-3 d-flex justify-content-center">
                             <img src="<?= $path . $r['products_img_name']?>" id="myimg" width="200">
                         </div>
                         <div class="d-flex justify-content-center btn border-primary text-white bg-primary">
