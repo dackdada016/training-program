@@ -9,6 +9,11 @@ $title = "新增商品資料";
 <?php include './part/html-header.php' ?>
 <?php include './part/html-body-header.php' ?>
 <div class="container add-prouct ms-auto me-auto mt-3">
+    <div class="btn">
+        <a href="list.php" class="text-danger">
+            <i class="fa-solid fa-angles-left">回上一頁</i>
+        </a>
+    </div>
     <div class="row ms-auto me-auto">
         <div class="col-lg-6 mt-3 ms-auto me-auto">
             <div class=" border border-warning rounded rounded-3">
@@ -29,10 +34,10 @@ $title = "新增商品資料";
                             </label><br>
                             <select name="productsType">
                                 <option value="none" selected disabled hidden>請選擇商品分類</option>
-                                <option value="1" >飼料</option>
-                                <option value="2" >罐頭</option>
-                                <option value="3" >外出繩</option>
-                                <option value="4" >耐磨玩具</option>
+                                <option value="飼料" >飼料</option>
+                                <option value="罐頭" >罐頭</option>
+                                <option value="外出繩" >外出繩</option>
+                                <option value="耐磨玩具" >耐磨玩具</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -59,11 +64,11 @@ $title = "新增商品資料";
                         <div class="input-group mb-3 rounded">
                             <input type="file"  accept="image/jpeg,image/png" name="my_file" class="form-control" multiple>
                         </div>
-                        <div class="file mb-3">
-                            <img src="" id="myimg" width="200">
+                        <div class="file mb-3 d-flex justify-content-center">
+                            <img src="" id="myimg" width="200" class="ms-auto me-auto">
                         </div>
-                        <div class="d-flex justify-content-center btn border-primary text-white bg-primary">
-                            <input class="btn text-white" type="submit" value="submit">
+                        <div class="d-flex justify-content-center d-grid gap-2 btn border-primary text-white bg-primary">
+                            <input class="btn text-white" type="submit" value="確定新增">
                         </div>
                     </form>
                 </div>

@@ -60,7 +60,7 @@ if(! empty($_FILES['my_file'])){
 
 
 $isPass = true; // 是否通過檢查
-
+$products_id = intval($_POST['products_id']);
 $productName = $_POST['productName'] ?? '';
 // $email = $_POST['email'] ?? '';
 $productsType = $_POST['productsType'] ?? '';
@@ -77,10 +77,17 @@ if(mb_strlen($productName) < 2){
 }
 // TODO:寫進資料庫
 
-$sql = " INSERT INTO `products`(`products_name`, `type_name`, `products_decripttion`, `products_price`, `products_unit`, `products_img_name`) VALUES (?,?,?,?,?,?)";
-  // and " INSERT INTO `product_imgs`(`products_id`, `img_name`) VALUES (?,?)";
+$sql = " UPDATE `products` SET 
+`products_name`=?,
+`type_name`=?,
+`products_decripttion`=?,
+`products_price`=?,
+`products_unit`=?,
+`products_img_name`=?
+ WHERE `products_id`=?";
 $stmt = $pdo->prepare($sql);
 
+// TODO:line 97 error
 if($isPass) {
  $stmt->execute([
     $productName,
@@ -89,11 +96,10 @@ if($isPass) {
     $productPrice,
     $productUnit,
     $fname,
+    $products_id
   ]);
 
   // lastInsertId -> 得到前面新增的資料(最新一筆)的id
-  $id = $pdo -> lastInsertId();
-  $output['lastId'] = $id;
   $output['success'] = !! $stmt->rowCount();
 
 }
