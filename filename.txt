@@ -1,0 +1,12 @@
+images/a.gif
+
+
+database
+table
+
+image 
+a.gif
+b.gif
+
+
+<img src=images/" + ??["image"]
